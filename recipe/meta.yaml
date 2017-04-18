@@ -27,13 +27,14 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
   requires:
     - pytest
   imports:
     - lmdb
   commands:
-    - py.test $SRC_DIR/tests   # [not win]
-    - py.test %SRC_DIR%/tests  # [win]
+    - py.test tests
 
 about:
   home: https://lmdb.readthedocs.io/
