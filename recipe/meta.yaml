@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://lmdb.readthedocs.io/
-  license: OpenLDAP Public License
+  license: OpenLDAP
   license_file: LICENSE
   summary: "Universal Python binding for the LMDB 'Lightning' Database"
 
