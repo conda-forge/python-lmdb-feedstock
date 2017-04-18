@@ -3,7 +3,7 @@ About python-lmdb
 
 Home: https://lmdb.readthedocs.io/
 
-Package license: OpenLDAP Public License
+Package license: OpenLDAP
 
 Feedstock license: BSD 3-Clause
 
@@ -17,6 +17,18 @@ disk-based databases.
 python-lmdb is a Python binding for LMDB including a bundled
 version of LMDB.
 
+
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-lmdb-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-lmdb-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-lmdb-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-lmdb-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/python-lmdb-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/python-lmdb-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-lmdb/badges/version.svg)](https://anaconda.org/conda-forge/python-lmdb)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-lmdb/badges/downloads.svg)](https://anaconda.org/conda-forge/python-lmdb)
 
 Installing python-lmdb
 ======================
@@ -38,7 +50,6 @@ It is possible to list all of the versions of `python-lmdb` available on your pl
 ```
 conda search python-lmdb --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -74,18 +85,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-lmdb-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-lmdb-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-lmdb-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-lmdb-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/python-lmdb-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/python-lmdb-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-lmdb/badges/version.svg)](https://anaconda.org/conda-forge/python-lmdb)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-lmdb/badges/downloads.svg)](https://anaconda.org/conda-forge/python-lmdb)
 
 
 Updating python-lmdb-feedstock
