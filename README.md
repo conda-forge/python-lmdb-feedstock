@@ -3,7 +3,7 @@ About python-lmdb
 
 Home: https://lmdb.readthedocs.io/
 
-Package license: OpenLDAP Public License
+Package license: OpenLDAP
 
 Feedstock license: BSD 3-Clause
 
