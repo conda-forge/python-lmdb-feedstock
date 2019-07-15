@@ -1,8 +1,8 @@
 {% set name = "python-lmdb" %}
 {% set pypi_name = "lmdb" %}
 {% set github_name = "py-lmdb" %}
-{% set version = "0.94" %}
-{% set sha256 = "aee7398523d1071c78e490c93fd19fff4ec270311309c26cd1380d36067055f6" %}
+{% set version = "0.96" %}
+{% set sha256 = "b21e2babc3fb024a0d8e5a8e515f18e280e6ab9d6e00c54b991508a0dd34db28" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,7 @@ source:
     - windows-skip-tests.patch
 
 build:
-  number: 1000
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
