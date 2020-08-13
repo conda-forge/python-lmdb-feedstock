@@ -1,8 +1,8 @@
 {% set name = "python-lmdb" %}
 {% set pypi_name = "lmdb" %}
 {% set github_name = "py-lmdb" %}
-{% set version = "0.96" %}
-{% set sha256 = "b21e2babc3fb024a0d8e5a8e515f18e280e6ab9d6e00c54b991508a0dd34db28" %}
+{% set version = "0.99" %}
+{% set sha256 = "a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -43,7 +43,7 @@ about:
   home: https://lmdb.readthedocs.io/
   license: OpenLDAP
   license_file: LICENSE
-  summary: "Universal Python binding for the LMDB 'Lightning' Database"
+  summary: Universal Python binding for the LMDB 'Lightning' Database
 
   description: |
     LMDB is a fast, memory-efficient, embedded key-value store (it does
