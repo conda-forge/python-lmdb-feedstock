@@ -16,7 +16,7 @@ source:
     - windows-skip-tests.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
