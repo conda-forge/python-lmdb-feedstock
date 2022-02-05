@@ -1,12 +1,12 @@
-{% set version = "0.99" %}
+{% set version = "1.0.0" %}
 
 package:
   name: python-lmdb
   version: {{ version }}
 
 source:
-  url: https://github.com/dw/py-lmdb/archive/py-lmdb_{{ version }}.zip
-  sha256: a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409
+  url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
+  sha256: e01bc4d62679b6e8c8962f1110f910cdfbdb2d750b145f02fae8b8a9d787f2f9
 
 build:
   number: 0
