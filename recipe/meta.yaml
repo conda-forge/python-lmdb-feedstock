@@ -49,7 +49,7 @@ about:
     python-lmdb is a Python binding for LMDB including a bundled
     version of LMDB.
   doc_url: https://lmdb.readthedocs.io/
-  dev_url: https://github.com/dw/py-lmdb/
+  dev_url: https://github.com/jnwatson/py-lmdb
 
 extra:
   recipe-maintainers:

@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-lmdb-fee
 
 Summary: Universal Python binding for the LMDB 'Lightning' Database
 
-Development: https://github.com/dw/py-lmdb/
+Development: https://github.com/jnwatson/py-lmdb
 
 Documentation: https://lmdb.readthedocs.io/
 
