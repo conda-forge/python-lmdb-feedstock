@@ -1,17 +1,12 @@
-{% set name = "python-lmdb" %}
-{% set pypi_name = "lmdb" %}
-{% set github_name = "py-lmdb" %}
 {% set version = "0.99" %}
-{% set sha256 = "a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409" %}
 
 package:
-  name: {{ name|lower }}
+  name: python-lmdb
   version: {{ version }}
 
 source:
-  fn: {{ github_name }}_{{ version }}.zip
-  url: https://github.com/dw/{{ github_name }}/archive/{{ github_name }}_{{ version }}.zip
-  sha256: {{ sha256 }}
+  url: https://github.com/dw/py-lmdb/archive/py-lmdb_{{ version }}.zip
+  sha256: a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409
   patches:
     - windows-skip-tests.patch
 
@@ -39,7 +34,7 @@ test:
   imports:
     - lmdb
   commands:
-    - py.test tests
+    - pytest tests
 
 about:
   home: https://lmdb.readthedocs.io/
