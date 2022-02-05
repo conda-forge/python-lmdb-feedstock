@@ -10,7 +10,12 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - export LMDB_INCLUDEDIR="$PREFIX/include"  # [unix]
+    - export LMDB_LIBDIR="$PREFIX/lib"          # [unix]
+    - set "LMDB_INCLUDEDIR=%LIBRARY_INC%"       # [win]
+    - set "LMDB_LIBDIR=%LIBRARY_BIN%"           # [win]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -21,6 +26,9 @@ requirements:
   host:
     - python
     - pip
+    # check against bundled version in
+    # https://github.com/jnwatson/py-lmdb/blob/py-lmdb_{{ version }}/lib/lmdb.h#L198-L203
+    - lmbd =0.9.24
   run:
     - python
 
