@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/dw/py-lmdb/archive/py-lmdb_{{ version }}.zip
   sha256: a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409
-  patches:
-    - windows-skip-tests.patch
 
 build:
   number: 0
