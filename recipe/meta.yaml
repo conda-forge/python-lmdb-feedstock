@@ -20,11 +20,11 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - patch     # [unix]
+    - patch-ng  # [win]
   host:
     - python
     - pip
-    - patch     # [unix]
-    - patch-ng  # [win]
   run:
     - python
 
