@@ -11,7 +11,7 @@ source:
     - patches/0001-use-patch-binary-on-PATH.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
