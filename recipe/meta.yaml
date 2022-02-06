@@ -21,9 +21,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - patch     # [unix]
-    - patch-ng  # [win]
   host:
     - python
+    - patch-ng  # [win]
     - pip
   run:
     - python
