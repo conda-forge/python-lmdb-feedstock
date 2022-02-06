@@ -1,19 +1,14 @@
-{% set name = "python-lmdb" %}
-{% set pypi_name = "lmdb" %}
-{% set github_name = "py-lmdb" %}
-{% set version = "0.99" %}
-{% set sha256 = "a9a3f5dfc62d201e9e1b6d0ed96f01f10521e7af4747aa78f3db4b67e34ae409" %}
+{% set version = "1.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: python-lmdb
   version: {{ version }}
 
 source:
-  fn: {{ github_name }}_{{ version }}.zip
-  url: https://github.com/dw/{{ github_name }}/archive/{{ github_name }}_{{ version }}.zip
-  sha256: {{ sha256 }}
+  url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
+  sha256: e01bc4d62679b6e8c8962f1110f910cdfbdb2d750b145f02fae8b8a9d787f2f9
   patches:
-    - windows-skip-tests.patch
+    - patches/0001-use-patch-binary-on-PATH.patch
 
 build:
   number: 0
@@ -25,8 +20,10 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - patch     # [unix]
   host:
     - python
+    - patch-ng  # [win]
     - pip
   run:
     - python
@@ -39,11 +36,11 @@ test:
   imports:
     - lmdb
   commands:
-    - py.test tests
+    - pytest tests
 
 about:
   home: https://lmdb.readthedocs.io/
-  license: OpenLDAP
+  license: OLDAP-2.8
   license_file: LICENSE
   summary: Universal Python binding for the LMDB 'Lightning' Database
 
@@ -56,8 +53,10 @@ about:
     python-lmdb is a Python binding for LMDB including a bundled
     version of LMDB.
   doc_url: https://lmdb.readthedocs.io/
-  dev_url: https://github.com/dw/py-lmdb/
+  dev_url: https://github.com/jnwatson/py-lmdb
 
 extra:
   recipe-maintainers:
     - pitrou
+    - h-vetinari
+    - xhochy
