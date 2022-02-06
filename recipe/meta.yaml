@@ -28,11 +28,6 @@ requirements:
   run:
     - python
 
-{% set tests_to_skip = "_not_a_real_test" %}
-# a test that checks preload fault-in by counting references(?),
-# limits are too tight in emulation, apparently.
-{% set tests_to_skip = tests_to_skip + " or (cursor_test and test_preload)" %}  # [aarch64 or ppc64le]
-
 test:
   source_files:
     - tests
@@ -41,7 +36,7 @@ test:
   imports:
     - lmdb
   commands:
-    - pytest tests -k "not ({{ tests_to_skip }})"
+    - pytest tests
 
 about:
   home: https://lmdb.readthedocs.io/
