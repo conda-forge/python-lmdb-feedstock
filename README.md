@@ -3,7 +3,7 @@ About python-lmdb
 
 Home: https://lmdb.readthedocs.io/
 
-Package license: OpenLDAP
+Package license: OLDAP-2.8
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-lmdb-feedstock/blob/master/LICENSE.txt)
 
@@ -260,5 +260,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@pitrou](https://github.com/pitrou/)
+* [@xhochy](https://github.com/xhochy/)
 
