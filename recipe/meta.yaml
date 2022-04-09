@@ -12,19 +12,21 @@ source:
 
 build:
   number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: LMDB_FORCE_SYSTEM=1 {{ PYTHON }} -m pip install . --no-deps -vv  # [not win]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv                      # [win]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - setuptools                             # [build_platform != target_platform]
-    - cffi                                   # [build_platform != target_platform]
+    - lmdb                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - patch     # [unix]
   host:
     - python
+    - lmdb      # [not win]
     - patch-ng  # [win]
     - pip
   run:
