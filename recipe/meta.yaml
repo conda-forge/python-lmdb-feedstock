@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: python-lmdb
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
-  sha256: 510df2fc5afe53d7706a6f3ff3e0a65aeb6d9c7d2d3ca642609aa3d0b88ee238
+  sha256: c574035dd85ef7f5b1d6d9c9f639fcaff51fcf85a397c5b6d721e161e6077f51
   patches:
     - patches/0001-use-patch-binary-on-PATH.patch
 
