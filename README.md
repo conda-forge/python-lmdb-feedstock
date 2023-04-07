@@ -1,11 +1,11 @@
-About python-lmdb
-=================
+About python-lmdb-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-lmdb-feedstock/blob/main/LICENSE.txt)
 
 Home: https://lmdb.readthedocs.io/
 
 Package license: OLDAP-2.8
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-lmdb-feedstock/blob/main/LICENSE.txt)
 
 Summary: Universal Python binding for the LMDB 'Lightning' Database
 
