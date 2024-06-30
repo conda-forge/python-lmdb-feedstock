@@ -1,4 +1,4 @@
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 package:
   name: python-lmdb
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
-  sha256: c574035dd85ef7f5b1d6d9c9f639fcaff51fcf85a397c5b6d721e161e6077f51
+  sha256: 4f00161c51082396e3c13090113b661a01cb980c75942ffe9a4f01d04385b741
   patches:
     - patches/0001-use-patch-binary-on-PATH.patch
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - patch     # [unix]
   host:
