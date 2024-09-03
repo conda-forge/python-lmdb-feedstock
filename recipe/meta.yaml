@@ -22,6 +22,7 @@ requirements:
     - patch     # [unix]
   host:
     - python
+    - setuptools
     - patch-ng  # [win]
     - pip
   run:
