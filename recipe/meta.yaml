@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
   sha256: fa0a84d166418fdb87fc8bd235d85aa7bcb690e995ff32ea411aa50eaf52607e
+  patches:
+    - 368.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -22,6 +24,7 @@ requirements:
     - patch     # [unix]
   host:
     - python
+    - setuptools
     - patch-ng  # [win]
     - pip
   run:
