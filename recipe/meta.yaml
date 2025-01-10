@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_{{ version }}.tar.gz
   sha256: 992fc8a5511d7c84a1ab6889d0d2ff957d452a00fc87167a6dc36ba42903b519
-  patches:
-    - 368.patch
 
 build:
   number: 0
