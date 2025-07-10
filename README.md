@@ -21,7 +21,6 @@ disk-based databases.
 python-lmdb is a Python binding for LMDB including a bundled
 version of LMDB.
 
-
 Current build status
 ====================
 
