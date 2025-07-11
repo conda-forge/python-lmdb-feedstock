@@ -1,0 +1,21 @@
+From b6da7f3209ab05f8ce8456f08edaa1411a9c2b5b Mon Sep 17 00:00:00 2001
+From: "Uwe L. Korn" <uwe.korn@quantco.com>
+Date: Thu, 10 Jul 2025 19:58:54 +0200
+Subject: [PATCH] typedef pid_t on win
+
+---
+ lmdb/cpython.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/lmdb/cpython.c b/lmdb/cpython.c
+index ca09f69..56069f0 100644
+--- a/lmdb/cpython.c
++++ b/lmdb/cpython.c
+@@ -36,6 +36,7 @@
+ #   define bool int
+ #   define true 1
+ #   define false 0
++typedef int pid_t;
+ #else
+ #   include <stdbool.h>
+ #endif

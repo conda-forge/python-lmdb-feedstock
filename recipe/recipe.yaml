@@ -1,0 +1,73 @@
+schema_version: 1
+
+context:
+  version: 1.7.1
+
+package:
+  name: python-lmdb
+  version: ${{ version }}
+
+source:
+  url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_${{ version }}.tar.gz
+  sha256: e987bb2decd903f19f73b6fbf7f95ef9119c6b33afaae6651857bae92fcc807d
+  patches:
+    - 0001-typedef-pid_t-on-win.patch
+
+build:
+  number: 0
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: 
+        - python
+        - cross-python_${{ target_platform }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - if: unix
+      then: patch
+  host:
+    - python
+    - setuptools
+    - if: win
+      then: patch-ng
+    - pip
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - lmdb
+  - files:
+      source:
+        - tests
+    requirements:
+      run:
+        - pytest
+    script:
+      - pytest tests
+
+about:
+  license: OLDAP-2.8
+  license_file: LICENSE
+  summary: Universal Python binding for the LMDB 'Lightning' Database
+  description: |
+    LMDB is a fast, memory-efficient, embedded key-value store (it does
+    not require running an external daemon).
+    With memory-mapped files, it has the read performance of a pure
+    in-memory database while retaining the persistence of standard
+    disk-based databases.
+    python-lmdb is a Python binding for LMDB including a bundled
+    version of LMDB.
+  homepage: https://lmdb.readthedocs.io/
+  repository: https://github.com/jnwatson/py-lmdb
+  documentation: https://lmdb.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - pitrou
+    - h-vetinari
+    - xhochy
