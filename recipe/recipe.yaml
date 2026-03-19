@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.8.1"
+  version: "2.1.0"
 
 package:
   name: python-lmdb
@@ -9,13 +9,16 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_${{ version }}.tar.gz
-  sha256: fa608c66b138fb963b0ac460ef6511c4faa7045417b461dc37aa77d1c5739592
+  sha256: e37100a12109cdaf03ca3ece07c21ebcee9f4296053f6f7b46bad5581698a5af
   patches:
     - 0001-typedef-pid_t-on-win.patch
 
 build:
-  number: 1
-  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+  number: 0
+  script:
+    - if: linux
+      then: export LDFLAGS="${LDFLAGS} -pthread"
+    - ${{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
