@@ -15,7 +15,10 @@ source:
 
 build:
   number: 0
-  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - if: linux
+      then: export LDFLAGS="${LDFLAGS} -pthread"
+    - ${{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
