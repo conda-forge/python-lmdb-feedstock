@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.1"
+  version: "2.2.0"
 
 package:
   name: python-lmdb
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_${{ version }}.tar.gz
-  sha256: e2d07142ac523be99026b3b61073e7d4bfd0cc569295602cf1acdd08280d0e20
+  sha256: 050f04fc9671e1e3a9871e06e5e5b09eb9624d6cad53f2f4c637bca5293d986b
   patches:
     - 0001-typedef-pid_t-on-win.patch
 
