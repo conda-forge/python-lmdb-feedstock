@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.2.0"
+  version: "2.2.1"
 
 package:
   name: python-lmdb
@@ -9,12 +9,12 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_${{ version }}.tar.gz
-  sha256: 050f04fc9671e1e3a9871e06e5e5b09eb9624d6cad53f2f4c637bca5293d986b
+  sha256: c627c36f5ae289362834eda345bbf9bf343e609c6e0941093feaf919cda68b59
   patches:
     - 0001-typedef-pid_t-on-win.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - if: aarch64 or ppc64le
       then: |
