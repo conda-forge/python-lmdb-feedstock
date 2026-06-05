@@ -57,38 +57,7 @@ tests:
       run:
         - pytest
     script:
-      - if: aarch64
-        then: |
-          # Deselect tests/env_test.py::OpenTest::test_max_readers on aarch64.
-          #
-          # This test segfaults inside pthread_mutex_lock when LMDB acquires
-          # the process-shared robust mutex on the reader-lock table.
-          #
-          # The crash does not seem to be caused by our build:
-          #   * The official PyPI wheel (lmdb 2.2.0, built on manylinux2014)
-          #     crashes identically on the same conda-forge aarch64 runner.
-          #     See below.
-          #   * Reproduces across glibc 2.17 / 2.28 / 2.34 (no ABI mismatch).
-          #   * Reproduces across overlayfs, tmpfs (/dev/shm) and host-backed
-          #     ext4 (no filesystem dependency).
-          #   * All other 395 tests pass.
-          #
-          # The crash appears to be an interaction between LMDB's robust
-          # pthread mutex and the conda-forge aarch64 native runner's
-          # container/kernel environment. See:
-          #   https://github.com/conda-forge/python-lmdb-feedstock/pull/57
-          #
-          # Diagnostic: run test_max_readers against the PyPI wheel to
-          # determine whether the crash is in our build or the runner.
-          # python -m venv /tmp/pypi-venv
-          # /tmp/pypi-venv/bin/pip install lmdb pytest
-          # /tmp/pypi-venv/bin/python -m pytest || \
-          #     echo "PyPI wheel ALSO crashes — runner-side issue"
-
-          # Deselect test_max_readers in our build
-          pytest -k "not test_max_readers" -vvv
-        # Run the full test suite on other platforms
-        else: pytest -vvv
+      - pytest -vvv
 
 about:
   license: OLDAP-2.8
