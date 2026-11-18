@@ -14,7 +14,10 @@ source:
     - 0001-typedef-pid_t-on-win.patch
 
 build:
-  number: 0
+  number: 1
+  # hangs indefinitely during tests; feel free to debug!
+  # c.f. also https://github.com/jnwatson/py-lmdb/issues/458
+  skip: win and is_freethreading
   script:
     - if: aarch64 or ppc64le
       then: |
