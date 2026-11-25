@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.3.0"
+  version: "3.0.0"
 
 package:
   name: python-lmdb
@@ -9,12 +9,12 @@ package:
 
 source:
   url: https://github.com/jnwatson/py-lmdb/archive/refs/tags/py-lmdb_${{ version }}.tar.gz
-  sha256: 674474011f9947c5b22b24e5cc8995d8c759d8e697cf273770dff3984f88a9ec
+  sha256: caa270cf73d05f6687972530f28d1ce3c5a2d60fa2d921b14bf590ecebe15d62
   patches:
     - 0001-typedef-pid_t-on-win.patch
 
 build:
-  number: 2
+  number: 0
   # hangs indefinitely during tests; feel free to debug!
   # c.f. also https://github.com/jnwatson/py-lmdb/issues/458
   skip: win and is_freethreading
